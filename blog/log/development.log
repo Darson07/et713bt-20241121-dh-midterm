@@ -158,3 +158,502 @@ Processing by ArticlesController#show as TURBO_STREAM
 Completed 200 OK in 34ms (Views: 13.9ms | ActiveRecord: 0.6ms (2 queries, 0 cached) | GC: 0.0ms)
 
 
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='Blog'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Blog'*/[0m
+Migrating to AddStatusToArticles (20241121184700)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Blog'*/[0m
+  [1m[35m (2.6ms)[0m  [1m[35mALTER TABLE "articles" ADD "status" varchar /*application='Blog'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20241121184700') RETURNING "version" /*application='Blog'*/[0m
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Blog'*/[0m
+Migrating to AddStatusToComments (20241121184708)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Blog'*/[0m
+  [1m[35m (2.7ms)[0m  [1m[35mALTER TABLE "comments" ADD "status" varchar /*application='Blog'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20241121184708') RETURNING "version" /*application='Blog'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Blog'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Blog'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.9ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='Blog'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Blog'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Blog'*/[0m
+Started GET "/" for 162.83.243.134 at 2024-11-23 19:55:47 +0000
+Cannot render console from 162.83.243.134! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Blog'*/[0m
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."status" = 'public' /*action='index',application='Blog',controller='articles'*/[0m
+  ↳ app/models/concerns/visible.rb:12:in `public_count'
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" /*action='index',application='Blog',controller='articles'*/[0m
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/application (Duration: 21.6ms | GC: 1.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 45.2ms | GC: 2.0ms)
+Completed 200 OK in 184ms (Views: 51.7ms | ActiveRecord: 2.4ms (2 queries, 0 cached) | GC: 19.2ms)
+
+
+[ActionDispatch::HostAuthorization::DefaultResponseApp] Blocked hosts: 4eff99129b01459b9272e37c463504ef.vfs.cloud9.us-east-1.amazonaws.com
+Started GET "/" for 162.83.243.134 at 2024-11-23 19:57:02 +0000
+Cannot render console from 162.83.243.134! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Blog'*/[0m
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."status" = 'public' /*action='index',application='Blog',controller='articles'*/[0m
+  ↳ app/models/concerns/visible.rb:12:in `public_count'
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" /*action='index',application='Blog',controller='articles'*/[0m
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/application (Duration: 73.8ms | GC: 1.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 172.2ms | GC: 2.4ms)
+Completed 200 OK in 365ms (Views: 171.3ms | ActiveRecord: 9.5ms (2 queries, 0 cached) | GC: 21.4ms)
+
+
+Started GET "/" for 162.83.243.134 at 2024-11-23 19:58:47 +0000
+Cannot render console from 162.83.243.134! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Blog'*/[0m
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."status" = 'public' /*action='index',application='Blog',controller='articles'*/[0m
+  ↳ app/models/concerns/visible.rb:12:in `public_count'
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" /*action='index',application='Blog',controller='articles'*/[0m
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/application (Duration: 20.4ms | GC: 1.7ms)
+  Rendered layout layouts/application.html.erb (Duration: 35.2ms | GC: 2.6ms)
+Completed 200 OK in 97ms (Views: 37.1ms | ActiveRecord: 2.4ms (2 queries, 0 cached) | GC: 4.3ms)
+
+
+Started GET "/" for 162.83.243.134 at 2024-11-23 19:59:12 +0000
+Cannot render console from 162.83.243.134! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."status" = 'public' /*action='index',application='Blog',controller='articles'*/[0m
+  ↳ app/models/concerns/visible.rb:12:in `public_count'
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" /*action='index',application='Blog',controller='articles'*/[0m
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/application (Duration: 4.6ms | GC: 0.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | GC: 0.4ms)
+Completed 200 OK in 19ms (Views: 6.8ms | ActiveRecord: 0.4ms (2 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/" for 162.83.243.134 at 2024-11-23 20:05:56 +0000
+Cannot render console from 162.83.243.134! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Blog'*/[0m
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."status" = 'public' /*action='index',application='Blog',controller='articles'*/[0m
+  ↳ app/models/concerns/visible.rb:12:in `public_count'
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" /*action='index',application='Blog',controller='articles'*/[0m
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/application (Duration: 16.1ms | GC: 1.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 29.9ms | GC: 1.9ms)
+Completed 200 OK in 108ms (Views: 31.2ms | ActiveRecord: 2.3ms (2 queries, 0 cached) | GC: 20.3ms)
+
+
+Started GET "/" for 162.83.243.134 at 2024-11-23 20:28:47 +0000
+Cannot render console from 162.83.243.134! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Blog'*/[0m
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."status" = 'public' /*action='index',application='Blog',controller='articles'*/[0m
+  ↳ app/models/concerns/visible.rb:12:in `public_count'
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" /*action='index',application='Blog',controller='articles'*/[0m
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/application (Duration: 18.6ms | GC: 1.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 38.8ms | GC: 2.1ms)
+Completed 200 OK in 176ms (Views: 44.7ms | ActiveRecord: 2.9ms (2 queries, 0 cached) | GC: 20.1ms)
+
+
+Started GET "/" for 162.83.243.134 at 2024-11-23 20:28:49 +0000
+Cannot render console from 162.83.243.134! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."status" = 'public' /*action='index',application='Blog',controller='articles'*/[0m
+  ↳ app/models/concerns/visible.rb:12:in `public_count'
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" /*action='index',application='Blog',controller='articles'*/[0m
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/application (Duration: 5.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | GC: 0.5ms)
+Completed 200 OK in 23ms (Views: 8.5ms | ActiveRecord: 0.4ms (2 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/assets/application-8b441ae0.css" for 162.83.243.134 at 2024-11-23 20:28:49 +0000
+Cannot render console from 162.83.243.134! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/assets/application-bfcdf840.js" for 162.83.243.134 at 2024-11-23 20:28:49 +0000
+Started GET "/assets/turbo.min-fae85750.js" for 162.83.243.134 at 2024-11-23 20:28:49 +0000
+Cannot render console from 162.83.243.134! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Cannot render console from 162.83.243.134! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/assets/stimulus-loading-1fc53fe7.js" for 162.83.243.134 at 2024-11-23 20:28:49 +0000
+Cannot render console from 162.83.243.134! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/assets/stimulus.min-4b1e420e.js" for 162.83.243.134 at 2024-11-23 20:28:49 +0000
+Cannot render console from 162.83.243.134! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/assets/controllers/application-3affb389.js" for 162.83.243.134 at 2024-11-23 20:28:49 +0000
+Started GET "/assets/controllers/index-ee64e1f1.js" for 162.83.243.134 at 2024-11-23 20:28:49 +0000
+Started GET "/assets/controllers/hello_controller-708796bd.js" for 162.83.243.134 at 2024-11-23 20:28:49 +0000
+Cannot render console from 162.83.243.134! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Cannot render console from 162.83.243.134! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Cannot render console from 162.83.243.134! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/" for 162.83.243.134 at 2024-11-23 20:30:20 +0000
+Cannot render console from 162.83.243.134! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."status" = 'public' /*action='index',application='Blog',controller='articles'*/[0m
+  ↳ app/models/concerns/visible.rb:12:in `public_count'
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" /*action='index',application='Blog',controller='articles'*/[0m
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/application (Duration: 7.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 62.5ms | GC: 1.7ms)
+Completed 200 OK in 96ms (Views: 64.1ms | ActiveRecord: 0.4ms (2 queries, 0 cached) | GC: 1.7ms)
+
+
+Started GET "/" for 162.83.243.134 at 2024-11-23 20:33:30 +0000
+Cannot render console from 162.83.243.134! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Blog'*/[0m
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."status" = 'public' /*action='index',application='Blog',controller='articles'*/[0m
+  ↳ app/models/concerns/visible.rb:12:in `public_count'
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" /*action='index',application='Blog',controller='articles'*/[0m
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/application (Duration: 17.9ms | GC: 1.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 33.9ms | GC: 2.3ms)
+Completed 200 OK in 145ms (Views: 35.0ms | ActiveRecord: 2.5ms (2 queries, 0 cached) | GC: 26.6ms)
+
+
+Started GET "/articles/1" for 162.83.243.134 at 2024-11-23 20:33:31 +0000
+Cannot render console from 162.83.243.134! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = 1 LIMIT 1 /*action='show',application='Blog',controller='articles'*/[0m
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = 1 /*action='show',application='Blog',controller='articles'*/[0m
+  ↳ app/views/articles/show.html.erb:14
+  Rendered collection of comments/_comment.html.erb [1 times] (Duration: 1.9ms | GC: 0.0ms)
+  Rendered comments/_form.html.erb (Duration: 13.1ms | GC: 0.1ms)
+  Rendered articles/show.html.erb within layouts/application (Duration: 49.2ms | GC: 1.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 50.4ms | GC: 1.3ms)
+Completed 200 OK in 65ms (Views: 50.4ms | ActiveRecord: 0.8ms (2 queries, 0 cached) | GC: 1.7ms)
+
+
+Started DELETE "/articles/1/comments/1?_method=delete" for 162.83.243.134 at 2024-11-23 20:33:36 +0000
+Cannot render console from 162.83.243.134! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CommentsController#destroy as TURBO_STREAM
+  Parameters: {"article_id"=>"1", "id"=>"1"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = 1 LIMIT 1 /*action='destroy',application='Blog',controller='comments'*/[0m
+  ↳ app/controllers/comments_controller.rb:9:in `destroy'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = 1 AND "comments"."id" = 1 LIMIT 1 /*action='destroy',application='Blog',controller='comments'*/[0m
+  ↳ app/controllers/comments_controller.rb:10:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='destroy',application='Blog',controller='comments'*/[0m
+  ↳ app/controllers/comments_controller.rb:11:in `destroy'
+  [1m[36mComment Destroy (2.0ms)[0m  [1m[31mDELETE FROM "comments" WHERE "comments"."id" = 1 /*action='destroy',application='Blog',controller='comments'*/[0m
+  ↳ app/controllers/comments_controller.rb:11:in `destroy'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='destroy',application='Blog',controller='comments'*/[0m
+  ↳ app/controllers/comments_controller.rb:11:in `destroy'
+Redirected to https://4eff99129b01459b9272e37c463504ef.vfs.cloud9.us-east-1.amazonaws.com/articles/1
+Completed 303 See Other in 99ms (ActiveRecord: 3.8ms (3 queries, 0 cached) | GC: 50.4ms)
+
+
+Started GET "/articles/1" for 162.83.243.134 at 2024-11-23 20:33:36 +0000
+Cannot render console from 162.83.243.134! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ArticlesController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = 1 LIMIT 1 /*action='show',application='Blog',controller='articles'*/[0m
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = 1 /*action='show',application='Blog',controller='articles'*/[0m
+  ↳ app/views/articles/show.html.erb:14
+  Rendered collection of templates [0 times] (Duration: 0.1ms | GC: 0.0ms)
+  Rendered comments/_form.html.erb (Duration: 2.6ms | GC: 0.0ms)
+  Rendered articles/show.html.erb within layouts/application (Duration: 7.2ms | GC: 0.8ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | GC: 0.8ms)
+Completed 200 OK in 24ms (Views: 9.0ms | ActiveRecord: 0.3ms (2 queries, 0 cached) | GC: 0.8ms)
+
+
+Started POST "/articles/1/comments" for 162.83.243.134 at 2024-11-23 20:33:45 +0000
+Cannot render console from 162.83.243.134! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CommentsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "comment"=>{"commenter"=>"A fellow dev", "body"=>"I agree!!!", "status"=>"public"}, "commit"=>"Create Comment", "article_id"=>"1"}
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = 1 LIMIT 1 /*action='create',application='Blog',controller='comments'*/[0m
+  ↳ app/controllers/comments_controller.rb:3:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='create',application='Blog',controller='comments'*/[0m
+  ↳ app/controllers/comments_controller.rb:4:in `create'
+  [1m[36mComment Create (2.0ms)[0m  [1m[32mINSERT INTO "comments" ("commenter", "body", "article_id", "created_at", "updated_at", "status") VALUES ('A fellow dev', 'I agree!!!', 1, '2024-11-23 20:33:45.363459', '2024-11-23 20:33:45.363459', 'public') RETURNING "id" /*action='create',application='Blog',controller='comments'*/[0m
+  ↳ app/controllers/comments_controller.rb:4:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='create',application='Blog',controller='comments'*/[0m
+  ↳ app/controllers/comments_controller.rb:4:in `create'
+Redirected to https://4eff99129b01459b9272e37c463504ef.vfs.cloud9.us-east-1.amazonaws.com/articles/1
+Completed 302 Found in 32ms (ActiveRecord: 2.5ms (2 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/articles/1" for 162.83.243.134 at 2024-11-23 20:33:45 +0000
+Cannot render console from 162.83.243.134! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ArticlesController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = 1 LIMIT 1 /*action='show',application='Blog',controller='articles'*/[0m
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = 1 /*action='show',application='Blog',controller='articles'*/[0m
+  ↳ app/views/articles/show.html.erb:14
+  Rendered collection of comments/_comment.html.erb [1 times] (Duration: 0.8ms | GC: 0.2ms)
+  Rendered comments/_form.html.erb (Duration: 3.3ms | GC: 0.0ms)
+  Rendered articles/show.html.erb within layouts/application (Duration: 7.6ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.7ms | GC: 0.2ms)
+Completed 200 OK in 25ms (Views: 9.1ms | ActiveRecord: 0.5ms (2 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/articles/1/edit" for 162.83.243.134 at 2024-11-23 20:33:46 +0000
+Cannot render console from 162.83.243.134! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = 1 LIMIT 1 /*action='edit',application='Blog',controller='articles'*/[0m
+  ↳ app/controllers/articles_controller.rb:25:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/edit.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 6.3ms | GC: 0.8ms)
+  Rendered articles/edit.html.erb within layouts/application (Duration: 7.3ms | GC: 0.8ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | GC: 0.8ms)
+Completed 200 OK in 33ms (Views: 8.8ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.8ms)
+
+
+Started GET "/" for 162.83.243.134 at 2024-11-23 20:33:51 +0000
+Cannot render console from 162.83.243.134! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."status" = 'public' /*action='index',application='Blog',controller='articles'*/[0m
+  ↳ app/models/concerns/visible.rb:12:in `public_count'
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" /*action='index',application='Blog',controller='articles'*/[0m
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/application (Duration: 4.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | GC: 0.0ms)
+Completed 200 OK in 16ms (Views: 6.5ms | ActiveRecord: 0.4ms (2 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/articles/1" for 162.83.243.134 at 2024-11-23 20:33:52 +0000
+Cannot render console from 162.83.243.134! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = 1 LIMIT 1 /*action='show',application='Blog',controller='articles'*/[0m
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = 1 /*action='show',application='Blog',controller='articles'*/[0m
+  ↳ app/views/articles/show.html.erb:14
+  Rendered collection of comments/_comment.html.erb [1 times] (Duration: 0.6ms | GC: 0.0ms)
+  Rendered comments/_form.html.erb (Duration: 3.0ms | GC: 0.0ms)
+  Rendered articles/show.html.erb within layouts/application (Duration: 7.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | GC: 0.0ms)
+Completed 200 OK in 20ms (Views: 8.5ms | ActiveRecord: 0.3ms (2 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/articles/new" for 162.83.243.134 at 2024-11-23 20:33:52 +0000
+Cannot render console from 162.83.243.134! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ArticlesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 2.5ms | GC: 0.0ms)
+  Rendered articles/new.html.erb within layouts/application (Duration: 3.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | GC: 0.0ms)
+Completed 200 OK in 15ms (Views: 4.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/articles/1" for 162.83.243.134 at 2024-11-23 20:33:53 +0000
+Cannot render console from 162.83.243.134! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = 1 LIMIT 1 /*action='show',application='Blog',controller='articles'*/[0m
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = 1 /*action='show',application='Blog',controller='articles'*/[0m
+  ↳ app/views/articles/show.html.erb:14
+  Rendered collection of comments/_comment.html.erb [1 times] (Duration: 1.0ms | GC: 0.0ms)
+  Rendered comments/_form.html.erb (Duration: 2.1ms | GC: 0.0ms)
+  Rendered articles/show.html.erb within layouts/application (Duration: 13.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 14.5ms | GC: 0.0ms)
+Completed 200 OK in 32ms (Views: 14.9ms | ActiveRecord: 0.3ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 162.83.243.134 at 2024-11-23 20:35:03 +0000
+Cannot render console from 162.83.243.134! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Blog'*/[0m
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."status" = 'public' /*action='index',application='Blog',controller='articles'*/[0m
+  ↳ app/models/concerns/visible.rb:12:in `public_count'
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" /*action='index',application='Blog',controller='articles'*/[0m
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/application (Duration: 19.9ms | GC: 1.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 37.6ms | GC: 2.5ms)
+Completed 200 OK in 106ms (Views: 38.6ms | ActiveRecord: 2.9ms (2 queries, 0 cached) | GC: 18.6ms)
+
+
+Started GET "/articles/1" for 162.83.243.134 at 2024-11-23 20:35:05 +0000
+Cannot render console from 162.83.243.134! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = 1 LIMIT 1 /*action='show',application='Blog',controller='articles'*/[0m
+  ↳ app/controllers/articles_controller.rb:9:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = 1 /*action='show',application='Blog',controller='articles'*/[0m
+  ↳ app/views/articles/show.html.erb:14
+  Rendered collection of comments/_comment.html.erb [1 times] (Duration: 1.8ms | GC: 0.0ms)
+  Rendered comments/_form.html.erb (Duration: 12.0ms | GC: 0.0ms)
+  Rendered articles/show.html.erb within layouts/application (Duration: 42.8ms | GC: 1.5ms)
+  Rendered layout layouts/application.html.erb (Duration: 44.2ms | GC: 1.5ms)
+Completed 200 OK in 66ms (Views: 44.5ms | ActiveRecord: 0.7ms (2 queries, 0 cached) | GC: 1.5ms)
+
+
+Started GET "/articles/1" for 162.83.243.134 at 2024-11-23 20:35:09 +0000
+Cannot render console from 162.83.243.134! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = 1 LIMIT 1 /*action='show',application='Blog',controller='articles'*/[0m
+  ↳ app/controllers/articles_controller.rb:9:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = 1 /*action='show',application='Blog',controller='articles'*/[0m
+  ↳ app/views/articles/show.html.erb:14
+  Rendered collection of comments/_comment.html.erb [1 times] (Duration: 7.6ms | GC: 2.7ms)
+  Rendered comments/_form.html.erb (Duration: 9.0ms | GC: 3.5ms)
+  Rendered articles/show.html.erb within layouts/application (Duration: 29.2ms | GC: 10.5ms)
+  Rendered layout layouts/application.html.erb (Duration: 108.6ms | GC: 61.9ms)
+Completed 200 OK in 144ms (Views: 115.8ms | ActiveRecord: 0.5ms (2 queries, 0 cached) | GC: 65.1ms)
+
+
+Started GET "/articles/new" for 162.83.243.134 at 2024-11-23 20:35:09 +0000
+Cannot render console from 162.83.243.134! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ArticlesController#new as HTML
+Filter chain halted as #<Proc:0x00007ffbdccf8250 /home/ec2-user/.local/share/gem/ruby/gems/actionpack-8.0.0/lib/action_controller/metal/http_authentication.rb:82> rendered or redirected
+Completed 401 Unauthorized in 21ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/articles/new" for 162.83.243.134 at 2024-11-23 20:35:23 +0000
+Cannot render console from 162.83.243.134! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ArticlesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 2.6ms | GC: 0.0ms)
+  Rendered articles/new.html.erb within layouts/application (Duration: 4.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | GC: 0.0ms)
+Completed 200 OK in 20ms (Views: 6.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.8ms)
+
+
+Started GET "/articles/new" for 162.83.243.134 at 2024-11-23 20:35:25 +0000
+Cannot render console from 162.83.243.134! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ArticlesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 3.3ms | GC: 0.4ms)
+  Rendered articles/new.html.erb within layouts/application (Duration: 3.9ms | GC: 0.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | GC: 0.4ms)
+Completed 200 OK in 16ms (Views: 5.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/articles/1" for 162.83.243.134 at 2024-11-23 20:38:14 +0000
+Cannot render console from 162.83.243.134! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = 1 LIMIT 1 /*action='show',application='Blog',controller='articles'*/[0m
+  ↳ app/controllers/articles_controller.rb:9:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = 1 /*action='show',application='Blog',controller='articles'*/[0m
+  ↳ app/views/articles/show.html.erb:14
+  Rendered collection of comments/_comment.html.erb [1 times] (Duration: 2.3ms | GC: 0.0ms)
+  Rendered comments/_form.html.erb (Duration: 10.0ms | GC: 0.1ms)
+  Rendered articles/show.html.erb within layouts/application (Duration: 22.1ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 23.3ms | GC: 0.1ms)
+Completed 200 OK in 49ms (Views: 24.7ms | ActiveRecord: 0.8ms (2 queries, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/articles/new" for 162.83.243.134 at 2024-11-23 20:38:14 +0000
+Cannot render console from 162.83.243.134! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ArticlesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 8.0ms | GC: 0.0ms)
+  Rendered articles/new.html.erb within layouts/application (Duration: 8.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.9ms | GC: 0.0ms)
+Completed 200 OK in 40ms (Views: 10.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/" for 162.83.243.134 at 2024-11-23 20:38:16 +0000
+Cannot render console from 162.83.243.134! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."status" = 'public' /*action='index',application='Blog',controller='articles'*/[0m
+  ↳ app/models/concerns/visible.rb:12:in `public_count'
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" /*action='index',application='Blog',controller='articles'*/[0m
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | GC: 0.0ms)
+Completed 200 OK in 16ms (Views: 5.4ms | ActiveRecord: 0.5ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/articles/1" for 162.83.243.134 at 2024-11-23 20:38:17 +0000
+Cannot render console from 162.83.243.134! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = 1 LIMIT 1 /*action='show',application='Blog',controller='articles'*/[0m
+  ↳ app/controllers/articles_controller.rb:9:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = 1 /*action='show',application='Blog',controller='articles'*/[0m
+  ↳ app/views/articles/show.html.erb:14
+  Rendered collection of comments/_comment.html.erb [1 times] (Duration: 0.5ms | GC: 0.0ms)
+  Rendered comments/_form.html.erb (Duration: 2.6ms | GC: 0.0ms)
+  Rendered articles/show.html.erb within layouts/application (Duration: 6.4ms | GC: 0.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | GC: 0.4ms)
+Completed 200 OK in 18ms (Views: 7.6ms | ActiveRecord: 0.3ms (2 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/articles/new" for 162.83.243.134 at 2024-11-23 20:38:19 +0000
+Cannot render console from 162.83.243.134! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ArticlesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 3.2ms | GC: 0.4ms)
+  Rendered articles/new.html.erb within layouts/application (Duration: 3.6ms | GC: 0.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | GC: 0.4ms)
+Completed 200 OK in 15ms (Views: 5.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/" for 162.83.243.134 at 2024-11-23 20:38:21 +0000
+Cannot render console from 162.83.243.134! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."status" = 'public' /*action='index',application='Blog',controller='articles'*/[0m
+  ↳ app/models/concerns/visible.rb:12:in `public_count'
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" /*action='index',application='Blog',controller='articles'*/[0m
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/application (Duration: 4.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | GC: 0.0ms)
+Completed 200 OK in 23ms (Views: 6.2ms | ActiveRecord: 0.3ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 162.83.243.134 at 2024-11-23 20:38:22 +0000
+Cannot render console from 162.83.243.134! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."status" = 'public' /*action='index',application='Blog',controller='articles'*/[0m
+  ↳ app/models/concerns/visible.rb:12:in `public_count'
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" /*action='index',application='Blog',controller='articles'*/[0m
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | GC: 0.0ms)
+Completed 200 OK in 15ms (Views: 5.3ms | ActiveRecord: 0.4ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
